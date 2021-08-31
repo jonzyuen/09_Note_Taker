@@ -1,7 +1,12 @@
 const path = require('path');
+const express = require('express');
 
-app.get('/', (req, res) => {
-  app.sendFile(path.join(__dirname, './index.html'));
-});
+module.exports = (app) => {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './index.html'));
+  });
 
-module.exports = app
+  app.get('/notes', function (req, res) {
+    res.sendFile(path.join(__dirname, './notes.html'));
+  });
+};
