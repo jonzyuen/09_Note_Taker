@@ -1,6 +1,4 @@
-const path = require('path');
 const fs = require('fs');
-const express = require('express');
 
 module.exports = (app) => {
   let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));

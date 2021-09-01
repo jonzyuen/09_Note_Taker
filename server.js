@@ -1,10 +1,9 @@
 const express = require('express');
-const fs = require('fs');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-require('./apiRoute')(app);
-require('./htmlRoute')(app);
+require('./apiRoute.js')(app);
+require('./htmlRoute.js')(app);
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static('./'));
